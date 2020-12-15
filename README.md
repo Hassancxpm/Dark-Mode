@@ -1,66 +1,58 @@
-[build]: ./media/build.gif "Build create-cloudflare-app"
-[upload]: ./media/upload.gif "Upload create-cloudflare-app"
-
-# Create Cloudflare App
+# Dark Mode
 
 ## Overview
 
-This is a starter project for building a Cloudflare App with Babel (for the latest ES features), ESLint, and Prettier (for keeping things clean).
+Dark Mode Cloudflare app using [Dark Reader extension](https://github.com/darkreader/darkreader)
 
-Download this app and replace our code any time you want to build an Cloudflare app.
+## Options
 
-## Features
-
-#### Cloudflare DNS
-
-Your Cloudflare App can configure the [DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties) of any domain on Cloudflare.
+* RichText message
+* Add optionnal button
+* Add colors customization
+* Add redirection feature
+* Add style options
+* Add French traductions
 
 ## Setup
 
-Fork and clone the repo or download the [latest release](https://github.com/CloudflareApps/CreateCloudflareApp/releases/latest).
+Fork and clone the repo
 
 Install the dependencies with `yarn install` then build the project with `yarn build` (or `npm run build`).
 
-![alt text][build]
+Next, navigate to [App Creator](https://www.cloudflare.com/apps/developer/app-creator) and upload your project directory.
 
-Next, navigate to our [App Creator](https://www.cloudflare.com/apps/developer/app-creator) and upload your project directory.
-
-![alt text][upload]
-
-The App Creator will update automatically on file changes (Chrome only). Once you're done testing, press Create App to submit your app for moderation. Refer to our [Terms of Use](https://www.cloudflare.com/apps/developer/docs/resources/terms-of-use) for more information.
+The App Creator will update automatically on file changes (Chrome only). Once you're done testing, press Create App to submit your app for moderation. Refer to [Terms of Use](https://www.cloudflare.com/apps/developer/docs/resources/terms-of-use) for more information.
 
 ## Usage
 
-- `yarn start` (or `npm start`) Sets up your dev environment and runs Webpack in watch mode.
-- `yarn build` (or `npm run build`) Lints your project and compiles your JavaScript and CSS once for release.
+* `yarn start` (or `npm start`) Sets up your dev environment and runs Webpack in watch mode.
+* `yarn build` (or `npm run build`) Lints your project and compiles your JavaScript and CSS once for release.
 
 ### Other Interesting Scripts
 
-- `dev:setup` Add other initialization scripts to your development pipeline here.
+* `dev:setup` Add other initialization scripts to your development pipeline here.
 
 The project uses [yarn-run-all](https://www.npmjs.com/package/yarn-run-all) which makes it easy to run tasks in series or parallel using `yarn` or `npm`.
-
-## Details
 
 #### `install.json`
 
 This is where all the [installer options](https://www.cloudflare.com/apps/developer/docs/install-json) are added for the app.
 
-Use the DNS field to configure [Cloudflare DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties). If you don't want to configure DNS, just delete this field.
+DNS field is not used in this app [Cloudflare DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties). If you want to configure DNS, just add this field.
 
 #### `src/index.js`
 
-This is where the magic happens. Your app starts here.
+App start here.
 
 #### `src/styles.css`
 
-Write your app styles here.
+App styles here.
 
 #### `media/**`
 
-Put your icons, tile images, and screenshots to be used in your Cloudflare Apps page here.
+Icons, tile images, and screenshots to be used in the Cloudflare Apps page.
 
-[Download <code class="inline">media-templates.sketch</code>](https://github.com/CloudflareApps/MediaTemplates/raw/master/media-templates.sketch)
+[Download media-templates.sketch](https://github.com/CloudflareApps/MediaTemplates/raw/master/media-templates.sketch)
 
 #### `webpack.config.js`
 
@@ -70,11 +62,6 @@ Simple Webpack 4 config using Babel and CSS Loader. Please refrain from modifyin
 
 The Cloudflare [developer documentation](https://www.cloudflare.com/apps/developer/docs/getting-started) for examples and API usage.
 
-<!--
-<a href="https://www.cloudflare.com/apps/[[YOUR APP ALIAS]]/install?source=button">
-  <img
-    src="https://install.cloudflareapps.com/install-button.png"
-    alt="Install [[YOUR APP NAME]] with Cloudflare"
-    border="0"
-    width="150">
-</a> -->
+### Contribute
+
+Feel free to Pull Request this repository or to fork it. You can also open issues.

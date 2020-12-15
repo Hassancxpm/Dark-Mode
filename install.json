@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json.schemastore.org/install",
+  "resources": {
+    "body": [
+      {
+        "type": "style",
+        "src": "./build/styles.css"
+      },
+      {
+        "type": "script",
+        "src": "./build/index.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["_default"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "EnableDarkMode": {
+        "order": 0,
+        "title": "Enable Dark Mode Widget?",
+        "type": "string",
+        "format": "radios",
+        "enum": ["true", "false"],
+        "enumNames": {
+          "true": "Enable Dark Mode Widget",
+          "false": "Disable Dark Mode Widget"
+        },
+        "default": "false"
+      },
+      "showAdvanced": {
+        "showIf": {
+          "EnableDarkMode": "true"
+        },
+        "order": 1,
+        "type": "boolean",
+        "title": "Show advanced options",
+        "default": false
+      },
+      "positionWidget": {
+        "showIf": {
+          "showAdvanced": true
+        },
+        "order": 2,
+        "title": "Widget position",
+        "type": "string",
+        "format": "radios",
+        "enum": [
+          "cornerLeftBottom",
+          "cornerRightBottom",
+          "cornerLeftTop",
+          "cornerRightTop"
+        ],
+        "enumNames": {
+          "cornerLeftBottom": "Bottom corner left",
+          "cornerRightBottom": "Bottom corner right",
+          "cornerLeftTop": "Top corner left",
+          "cornerRightTop": "Top corner right"
+        },
+        "default": "cornerRightBottom"
+      },
+      "scaleTransform": {
+        "showIf": {
+          "showAdvanced": true
+        },
+        "title": "Widget size",
+        "format": "slider",
+        "order": 3,
+        "type": "number",
+        "default": 1.5,
+        "step": 0.1,
+        "minimum": 0,
+        "maximum": 2.5
+      },
+      "hideWidget": {
+        "showIf": {
+          "showAdvanced": true,
+          "EnableDarkMode": "true"
+        },
+        "order": 4,
+        "title": "Hide Widget",
+        "type": "boolean",
+        "description": "Enable Dark Mode but hide the widget",
+        "default": false
+      }
+    }
+  }
+}

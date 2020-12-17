@@ -45,6 +45,7 @@
       },
       "positionWidget": {
         "showIf": {
+          "EnableDarkMode": "true",
           "showAdvanced": true
         },
         "order": 2,
@@ -67,6 +68,7 @@
       },
       "scaleTransform": {
         "showIf": {
+          "EnableDarkMode": "true",
           "showAdvanced": true
         },
         "title": "Widget size",
@@ -80,8 +82,8 @@
       },
       "hideWidget": {
         "showIf": {
-          "showAdvanced": true,
-          "EnableDarkMode": "true"
+          "EnableDarkMode": "true",
+          "showAdvanced": true
         },
         "order": 4,
         "title": "Hide Widget",

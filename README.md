@@ -40,6 +40,16 @@ This is where all the [installer options](https://www.cloudflare.com/apps/develo
 
 DNS field is not used in this app [Cloudflare DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties). If you want to configure DNS, just add this field.
 
+You can also test this app directly into your website you can just click here:
+
+<iframe
+  src="https://install.cloudflareapps.com?appId=fNyZF92yN7oV"
+  allowTransparency="true"
+  scroll="no"
+  frameBorder="0"
+  style="height: 48px; width: 180px">
+</iframe>
+
 #### `src/index.js`
 
 App start here.

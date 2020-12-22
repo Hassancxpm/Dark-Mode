@@ -1,23 +1,23 @@
-const path = require("path")
-const webpack = require("webpack")
+const path = require("path");
+const webpack = require("webpack");
 
-const isDev = process.env.NODE_ENV !== "production"
+const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
   mode: "development",
   devtool: "hidden-source-map",
   entry: {
-    index: "./src/index.js",
+    index: "./src/index.js"
   },
   output: {
     filename: "[name].js",
     sourceMapFilename: "[name].map",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "build")
   },
   plugins: [
     new webpack.DefinePlugin({
-      isDev,
-    }),
+      isDev
+    })
   ],
   module: {
     rules: [
@@ -32,12 +32,12 @@ module.exports = {
               "env",
               {
                 targets: {
-                  browsers: ["last 2 versions", "ie >= 10"],
-                },
-              },
-            ],
-          ],
-        },
+                  browsers: ["last 2 versions", "ie >= 10"]
+                }
+              }
+            ]
+          ]
+        }
       },
       {
         test: /\.css$/,
@@ -45,13 +45,24 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[ext]",
-            },
+              name: "[name].[ext]"
+            }
           },
           "extract-loader",
-          "css-loader",
-        ],
+          "css-loader"
+        ]
       },
-    ],
-  },
-}
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
+    ]
+  }
+};

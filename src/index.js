@@ -89,16 +89,15 @@ function init() {
     });
 
     if (options.EnableDarkMode === "true") {
-      circle.classList.toggle("clicked");
-      toggler.classList.toggle("dark");
-      setFetchMethod(window.fetch);
-      enableDarkMode({
-        brightness: 100,
-        contrast: 90,
-        sepia: 10
-      });
+      // circle.classList.toggle("clicked");
+      // toggler.classList.toggle("dark");
+      // setFetchMethod(window.fetch);
+      // enableDarkMode({
+      //   brightness: 100,
+      //   contrast: 90,
+      //   sepia: 10
+      // });
       toggler.style.display = "block";
-      localStorage.setItem("darkmode", true);
     } else {
       localStorage.setItem("darkmode", false);
       disableDarkMode();
@@ -149,6 +148,8 @@ function init() {
           contrast: 90,
           sepia: 10
         });
+      } else {
+        disableDarkMode();
       }
     }
     activatedDark();

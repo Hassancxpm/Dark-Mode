@@ -16,10 +16,11 @@ cloudflare-app[app="DarkMode"] #darkmode {
 cloudflare-app[app="DarkMode"] .toggler {
   display: none;
   position: fixed;
-  width: 2em;
-  height: 2em;
+  width: 48px;
+  height: 48px;
+  right: 24px;
+  top: 24px;
   margin: 2em;
-  right: 1em;
   bottom: 1em;
   background-color: #222;
   border-radius: 50%;
@@ -38,17 +39,17 @@ cloudflare-app[app="DarkMode"] .toggler.dark:after {
   position: fixed;
   width: 16px;
   height: 16px;
-  left: 20%;
-  top: 20%;
+  left: 16px;
+  top: 16px;
   background: url(../media/sun.svg);
 }
 cloudflare-app[app="DarkMode"] .toggler:after {
   content: "";
   position: fixed;
+  left: 16px;
+  top: 15px;
   width: 16px;
   height: 16px;
-  left: 20%;
-  top: 20%;
   background: url(../media/moon_copy.svg) no-repeat;
 }
 cloudflare-app[app="DarkMode"] .toggler:hover {
@@ -61,10 +62,11 @@ cloudflare-app[app="DarkMode"] .circle {
   border: none;
   display: block;
   position: fixed;
-  width: 2em;
-  height: 2em;
+  right: 24px;
+  top: 24px;
+  width: 48px;
+  height: 48px;
   margin: 2em;
-  right: 1em;
   bottom: 1em;
   border-radius: 50%;
   background-color: #222;
@@ -85,8 +87,8 @@ cloudflare-app[app="DarkMode"] .circle {
 }
 
 cloudflare-app[app="DarkMode"] .circle.clicked {
-  -webkit-transform: scale(128) translateZ(0);
-  transform: scale(128) translateZ(0);
+  -webkit-transform: scale(200) translateZ(0);
+  transform: scale(200) translateZ(0);
 }
 
 @keyframes fadeOut {
@@ -102,25 +104,4 @@ cloudflare-app[app="DarkMode"] .removedarklayout {
   animation: fadeOut;
   animation-delay: -1s;
   animation-fill-mode: forwards;
-}
-
-@-moz-document url-prefix() {
-  cloudflare-app[app="DarkMode"] .toggler:after {
-    content: "";
-    position: fixed;
-    width: 16px;
-    height: 16px;
-    left: 22%;
-    top: 22%;
-    background: url(../media/moon_copy.svg) no-repeat;
-  }
-  cloudflare-app[app="DarkMode"] .toggler.dark:after {
-    content: "";
-    position: fixed;
-    width: 16px;
-    height: 16px;
-    left: 22%;
-    top: 22%;
-    background: url(../media/sun.svg);
-  }
 }

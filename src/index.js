@@ -55,14 +55,12 @@ function init() {
         localStorage.getItem("darkmode") === "false"
       ) {
         localStorage.setItem("darkmode", true);
-        setTimeout(() => {
-          setFetchMethod(window.fetch);
-          enableDarkMode({
-            brightness: 100,
-            contrast: 90,
-            sepia: 10
-          });
-        }, 800);
+        setFetchMethod(window.fetch);
+        enableDarkMode({
+          brightness: 100,
+          contrast: 90,
+          sepia: 10
+        });
       } else if (localStorage.getItem("darkmode") === "true") {
         localStorage.setItem("darkmode", false);
         disableDarkMode();
@@ -70,9 +68,6 @@ function init() {
     }
 
     function hideDarkLayout() {
-      // document.querySelector(
-      //   "cloudflare-app[app='DarkMode'] .circle.clicked"
-      // ).style.visibility = "hidden";
       circle.classList.add("removedarklayout");
       circle.removeEventListener("transitionend", hideDarkLayout);
     }
@@ -93,15 +88,17 @@ function init() {
       toggleDarkmode();
     });
 
-    // darkModeWidget.addEventListener("click", event => {
-    //   event.preventDefault();
-    //   event.stopImmediatePropagation();
-    //   toggleDarkmode();
-    // });
-
     if (options.EnableDarkMode === "true") {
+      circle.classList.toggle("clicked");
+      toggler.classList.toggle("dark");
+      setFetchMethod(window.fetch);
+      enableDarkMode({
+        brightness: 100,
+        contrast: 90,
+        sepia: 10
+      });
       toggler.style.display = "block";
-      // toggleDarkmode();
+      localStorage.setItem("darkmode", true);
     } else {
       localStorage.setItem("darkmode", false);
       disableDarkMode();
@@ -110,9 +107,13 @@ function init() {
 
     if (options.positionWidget === "cornerLeftBottom") {
       toggler.style.left = "1em";
+      toggler.style.top = "unset";
+      circle.style.top = "unset";
       circle.style.left = "1em";
     } else if (options.positionWidget === "cornerRightBottom") {
       toggler.style.right = "1em";
+      toggler.style.top = "unset";
+      circle.style.top = "unset";
       circle.style.right = "1em";
     } else if (options.positionWidget === "cornerLeftTop") {
       toggler.style.left = "1em";
@@ -138,9 +139,19 @@ function init() {
         sepia: 10
       });
       localStorage.setItem("darkmode", true);
-    } else {
-      localStorage.setItem("darkmode", false);
     }
+
+    function activatedDark() {
+      if (localStorage.getItem("darkmode") === "true") {
+        setFetchMethod(window.fetch);
+        enableDarkMode({
+          brightness: 100,
+          contrast: 90,
+          sepia: 10
+        });
+      }
+    }
+    activatedDark();
   }
 
   // INSTALL_SCOPE is an object that is used to handle option changes without refreshing the page.

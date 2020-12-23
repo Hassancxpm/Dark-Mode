@@ -120,18 +120,6 @@ function init() {
 
     toggler.style.transform = `scale(${options.scaleTransform})`;
 
-    if (options.hideWidget) {
-      toggler.style.display = "none";
-      circle.style.display = "none";
-      setFetchMethod(window.fetch);
-      enableDarkMode({
-        brightness: 100,
-        contrast: 90,
-        sepia: 10
-      });
-      localStorage.setItem("darkmode", true);
-    }
-
     function activatedDark() {
       if (localStorage.getItem("darkmode") === "true") {
         setFetchMethod(window.fetch);

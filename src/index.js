@@ -122,6 +122,9 @@ function init() {
 
     function activatedDark() {
       if (localStorage.getItem("darkmode") === "true") {
+        circle.classList.add("clicked");
+        toggler.classList.add("dark");
+        circle.classList.add("removedarklayout");
         setFetchMethod(window.fetch);
         enableDarkMode({
           brightness: 100,
@@ -129,6 +132,8 @@ function init() {
           sepia: 10
         });
       } else {
+        circle.classList.remove("clicked");
+        toggler.classList.remove("dark");
         disableDarkMode();
       }
     }
